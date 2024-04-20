@@ -12,9 +12,9 @@ exports.userSignUp = async (req, res) => {
             res.status(200).json({ signUp: true, message: "Signed Up Sucessfully" });
         }
         else {
-            res.status(500).json({ signUp: false, message: "Internal Server Error" });
+            res.status(500).json({ signUp: false, message: "We’re currently processing too many requests. Please try again later" });
         }
     } catch (error) {
-        res.status(500).json({ signUp: false, message: "Internal Server Error" });
+        res.status(500).json({ signUp: false, message: "We’re currently processing too many requests. Please try again later" });
     }
 }

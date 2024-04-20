@@ -16,6 +16,6 @@ exports.userLogin = async (req, res) => {
             res.status(401).json({ login: false, message: "Invalid login details. Please try again" });
         }
     } catch (error) {
-        res.status(500).json({ login: false, message: "Signed Up UnSucessfull" });
+        res.status(500).json({ login: false, message: "We’re currently processing too many requests. Please try again later" });
     }
 }
