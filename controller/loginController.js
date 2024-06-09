@@ -13,9 +13,9 @@ exports.userLogin = async (req, res) => {
             return res.json({ login: true, message: "LoggedIn Sucessfully", accessToken: accessToken, refreshToken: refreshToken })
         }
         else {
-            res.status(401).json({ login: false, message: "Invalid login details. Please try again" });
+            return res.status(401).json({ login: false, message: "Invalid login details. Please try again" });
         }
     } catch (error) {
-        res.status(500).json({ login: false, message: "We’re currently processing too many requests. Please try again later" });
+        return res.status(500).json({ login: false, message: "We’re currently processing too many requests. Please try again later" });
     }
 }

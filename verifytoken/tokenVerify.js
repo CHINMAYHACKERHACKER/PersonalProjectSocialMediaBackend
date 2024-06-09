@@ -14,7 +14,7 @@ const verifyUser = (req, res, next) => {
                 if (err) {
                     return res.json({ valid: false, message: "Invalid Token" })
                 } else {
-                    console.log("accesstoken still valied");
+                    console.log("accesstoken still valid");
                     req.Email = decoded.Email
                     req.loggedIn_user_id = decoded.loggedIn_user_id
                     next()
@@ -23,6 +23,7 @@ const verifyUser = (req, res, next) => {
         }
     } catch (error) {
         console.log(error);
+        return null;
     }
 }
 
@@ -54,6 +55,7 @@ const renewToken = (req, res) => {
         return exist;
     } catch (error) {
         console.log(error);
+        return null;
     }
 }
 
